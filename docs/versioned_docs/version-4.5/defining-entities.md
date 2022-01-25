@@ -56,8 +56,9 @@ for various ways:
 
 ```ts title="./entities/Book.ts"
 @Entity()
-export class Book extends BaseEntity {
-
+export class Book extends BaseEntity<Book,'id'> {
+  @PrimaryKey()
+    id: string;
   @Property()
   title!: string;
 
